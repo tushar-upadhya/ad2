@@ -4,7 +4,6 @@ import Users from "./pages/users/Users";
 import Products from "./pages/products/Products";
 import Navbar from "./components/navbar/Navbar";
 import Menu from "./components/menu/Menu";
-import Login from "./pages/login/Login";
 import "./styles/global.scss";
 import User from "./pages/user/User";
 import Product from "./pages/product/Product";
@@ -57,10 +56,6 @@ function App() {
           element: <Product />,
         },
       ],
-    },
-    {
-      path: "/login",
-      element: <Login />,
     },
   ]);
 
