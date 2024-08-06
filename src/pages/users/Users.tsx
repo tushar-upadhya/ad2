@@ -1,10 +1,13 @@
+// src/pages/Users/Users.tsx
+
 import React, { useState } from "react";
 import { GridColDef } from "@mui/x-data-grid";
+import { Link } from "react-router-dom";
 import DataTable from "../../components/dataTable/DataTable";
 import "./Users.scss";
 import { userRows } from "../../data";
 
-interface UserRow {
+interface IUserRow {
   id: number;
   img?: string;
   firstName: string;
@@ -18,24 +21,13 @@ interface UserRow {
 const columns: GridColDef[] = [
   { field: "id", headerName: "ID", width: 90 },
   {
-    field: "img",
-    headerName: "Avatar",
-    width: 100,
-    renderCell: (params) => {
-      return <img src={params.row.img || "/noavatar.png"} alt="" />;
-    },
-  },
-  {
     field: "firstName",
     type: "string",
     headerName: "First name",
-    width: 150,
-  },
-  {
-    field: "lastName",
-    type: "string",
-    headerName: "Last name",
-    width: 150,
+    width: 130,
+    renderCell: (params) => (
+      <Link to={`/user/${params.row.id}`}>{params.row.firstName}</Link>
+    ),
   },
   {
     field: "email",
@@ -72,7 +64,7 @@ const Users: React.FC = () => {
         <h1>Users</h1>
         <button onClick={() => setOpen(true)}>Add New User</button>
       </div>
-      <DataTable slug="users" columns={columns} rows={userRows as UserRow[]} />
+      <DataTable slug="users" columns={columns} rows={userRows as IUserRow[]} />
     </div>
   );
 };

@@ -1,8 +1,19 @@
 import { useState } from "react";
-import "./Products.scss";
+import "./products.scss";
 import DataTable from "../../components/dataTable/DataTable";
 import { GridColDef } from "@mui/x-data-grid";
 import { products } from "../../data";
+
+interface IProduct {
+  id: number;
+  img?: string;
+  title: string;
+  color: string;
+  price: string;
+  producer: string;
+  createdAt: string;
+  inStock: boolean;
+}
 
 const columns: GridColDef[] = [
   { field: "id", headerName: "ID", width: 90 },
@@ -52,8 +63,8 @@ const columns: GridColDef[] = [
   },
 ];
 
-const Products = () => {
-  const [open, setOpen] = useState(false);
+const Products: React.FC = () => {
+  const [open, setOpen] = useState<boolean>(false);
 
   return (
     <div className="products">
@@ -61,7 +72,11 @@ const Products = () => {
         <h1>Products</h1>
         <button onClick={() => setOpen(true)}>Add New Products</button>
       </div>
-      <DataTable slug="products" columns={columns} rows={products} />
+      <DataTable
+        slug="products"
+        columns={columns}
+        rows={products as IProduct[]}
+      />
     </div>
   );
 };

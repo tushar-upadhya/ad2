@@ -1,3 +1,4 @@
+import React from "react";
 import BarChartBox from "../../components/barChartBox/BarChartBox";
 import BigChartBox from "../../components/bigChartBox/BigChartBox";
 import ChartBox from "../../components/chartBox/ChartBox";
@@ -12,7 +13,7 @@ import {
 } from "../../data";
 import "./home.scss";
 
-const Home = () => {
+const Home: React.FC = () => {
   return (
     <div className="home">
       <div className="box box1">
@@ -24,7 +25,6 @@ const Home = () => {
       <div className="box box3">
         <ChartBox {...chartBoxProduct} />
       </div>
-
       <div className="box box5">
         <ChartBox {...chartBoxConversion} />
       </div>
