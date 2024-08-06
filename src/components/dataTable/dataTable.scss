@@ -1,28 +1,144 @@
-.dataTable{
+@import "../../styles/variables";
 
-  .dataGrid{
+.dataTable {
+  .dataGrid {
     background: white;
     padding: 20px;
 
-    .MuiDataGrid-toolbarContainer{
+    .MuiDataGrid-toolbarContainer {
       flex-direction: row-reverse;
     }
 
-    img{
+    img {
       width: 32px;
       height: 32px;
       border-radius: 50%;
       object-fit: cover;
     }
 
-    .action{
+    .action {
       display: flex;
       gap: 15px;
 
-      img{
+      img {
         width: 20px;
         height: 20px;
         cursor: pointer;
+      }
+    }
+  }
+
+  .confirmDialog {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+
+    .confirmDialogContent {
+      background: $soft-bg;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+
+      h3 {
+        margin-bottom: 20px;
+      }
+
+      .confirmDialogButtons {
+        display: flex;
+        justify-content: flex-end;
+        gap: 10px;
+        // background: $main-bg;
+
+        button {
+          padding: 10px 20px;
+          border: none;
+          border-radius: 5px;
+          cursor: pointer;
+        }
+
+        button:first-of-type {
+          background-color: #007bff;
+          color: white;
+        }
+
+        button:last-of-type {
+          background-color: #ccc;
+        }
+      }
+    }
+  }
+
+  .editFormDialog {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+
+    .editFormDialogContent {
+      background: $main-bg;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      width: 500px;
+
+      h3 {
+        margin-bottom: 20px;
+      }
+
+      form {
+        display: flex;
+        flex-direction: column;
+
+        .formGroup {
+          margin-bottom: 15px;
+
+          label {
+            display: block;
+            margin-bottom: 5px;
+          }
+
+          input {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+          }
+        }
+
+        .editFormDialogButtons {
+          display: flex;
+          justify-content: flex-end;
+          gap: 10px;
+
+          button {
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+          }
+
+          button:first-of-type {
+            background-color: #007bff;
+            color: white;
+          }
+
+          button:last-of-type {
+            background-color: #ccc;
+          }
+        }
       }
     }
   }

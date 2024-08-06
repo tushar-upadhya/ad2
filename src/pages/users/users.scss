@@ -1,14 +1,35 @@
-.users{
+@import "../../styles/variables";
 
-  .info{
+.users {
+  .info {
     display: flex;
     align-items: center;
     gap: 20px;
     margin-bottom: 20px;
 
-    button{
-      padding: 5px;
-      cursor: pointer;
+    h1 {
+      font-size: 2rem;
+      color: $main-color;
     }
+
+    button {
+      padding: 10px 20px;
+      border: none;
+      background-color: $main-color;
+      color: $main-bg;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 1rem;
+      transition: background-color 0.3s;
+
+      &:hover {
+        background-color: darken($main-color, 10%);
+      }
+    }
+  }
+
+  .dataTableContainer {
+    height: calc(100vh - 60px);
+    overflow-y: auto;
   }
 }

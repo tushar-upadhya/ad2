@@ -1,4 +1,4 @@
-@import "./variables.scss";
+@import "./variables";
 
 * {
   margin: 0;
@@ -15,10 +15,14 @@ a {
   font-family: "Inter", sans-serif;
   background-color: $main-bg;
   color: $main-color;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
 }
 
 .container {
   display: flex;
+  flex-grow: 1;
 }
 
 .menuContainer {
@@ -30,4 +34,5 @@ a {
 .contentContainer {
   padding: 5px 20px;
   width: 100%;
+  overflow-y: auto;
 }

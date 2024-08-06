@@ -9,6 +9,7 @@ import User from "./pages/user/User";
 import Product from "./pages/product/Product";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import UserPage from "./pages/userPage/UserPage";
+import UserDetails from "./pages/userDetails/UserDetails";
 
 const queryClient = new QueryClient();
 
@@ -59,6 +60,10 @@ function App() {
         {
           path: "/user/:id",
           element: <UserPage />,
+        },
+        {
+          path: "/user/:id",
+          element: <UserDetails />,
         },
       ],
     },

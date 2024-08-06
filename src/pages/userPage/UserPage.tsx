@@ -12,12 +12,14 @@ const UserPage: React.FC = () => {
   }
 
   return (
-    <div className="user-page">
-      <h1>{user.firstName}</h1>
-      <p>Email: {user.email}</p>
-      <p>Phone: {user.phone}</p>
-      <p>Created At: {user.createdAt}</p>
-      <p>Verified: {user.verified ? "Yes" : "No"}</p>
+    <div className="userPage">
+      <div className="userDetails">
+        <h1>{user.firstName}</h1>
+        <p>Email: {user.email}</p>
+        <p>Phone: {user.phone}</p>
+        <p>Created At: {user.createdAt}</p>
+        <p>Verified: {user.verified ? "Yes" : "No"}</p>
+      </div>
     </div>
   );
 };
